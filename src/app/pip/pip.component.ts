@@ -8,6 +8,7 @@ import { __values } from 'tslib';
 })
 export class PipComponent {
   fword:string=""
+  
   fdate:string=""
   amount?:number;
   metr:number=0;
