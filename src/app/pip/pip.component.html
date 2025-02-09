@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4">
+            <label for="idword" class="form-lable">Word</label>
+            <input type="text" class="form-control" (input)="Getvalue($any($event.target).value)">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4">
+            <br>
+            {{fword | titlecase }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4">
+            <label for="iddate" class="form-lable">Date</label>
+            <input type="date" class="form-control" (input)="Getvaluedate($any($event.target).value)">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4">
+            <br>
+            {{fdate |date :'medium' }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4">
+            <label for="idamount" class="form-lable">amount</label>
+            <input type="number" class="form-control" (input)="Getvalueamount($any($event.target).value)">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4">
+            <br>
+            {{amount |currency :'IR' :'symbol' :'0.0-0' }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4">
+            <label for="idmetr" class="form-lable">Metr</label>
+            <input type="number" class="form-control" (input)="Getvaluemetr($any($event.target).value)">
+        </div>
+        <div class="col-12 col-sm-12 col-md-4" *ngIf="(metr | convertmm :'dm' )>1">
+            <br>
+            {{metr | convertmm :'dm' }} dm
+            {{metr | convertmm :'cm' }} cm
+            {{metr | convertmm :'mm' }} mm
+            {{metr | convertmm :'µm' }} µm
+            {{metr | convertmm :'nm' }} nm
+        </div>
+    </div>
+    {{human |json }}
+ 
+</div>

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row my-2">
+        <h1>Data  as childern</h1>
+        <div class="col-12 col-sm-12 col-md-3" *ngFor="let item of cardlist">
+            <div class="card w-100 h-100">
+                <img [src]="item.images" class="img-fluid" alt="">
+                <div class="card-body">
+                  
+                    <h4 class="card-title">{{item.title| uppercase}}</h4>
+                    <span class="card-text">{{item.descript |lowercase}}</span>
+                
+                </div>
+
+            </div>
+        </div>
+      
+        
+        
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center align-items-center ">
+        <div class="col-12 col-sm-12 col-md-4">
+            <div class="mt-2">
+                <h1>Typing Challenge</h1>
+                <div class="mt-2">
+                    <span class="text-monospace" *ngFor="let item of randomtext.split('');let i=index" [class]="compare(item,Fvalue[i])" > {{item }} </span>
+                    <input type="text" (input)="checkword($any($event.target).value)" class="form-control" name="Randomtext" id="idrandomtext">
+
+                </div>
+                <div class="my-5 text-center" *ngIf="Fvalue == randomtext">
+                    <h2 >Success!</h2>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

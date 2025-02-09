@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row bg-warning d-flex justify-content-center ">
+        <div class="col-sm-12 col-md-4">
+            <div class="mt-2 form-floating">
+                <input type="number" (input)="getvalueCountPass($any($event.target).value)"   name="CountPass" class="form-control"id="idCountPass"  >
+                <label for="idCountPass"  class="form-label">CountPass</label>
+
+            </div>
+            <div class="mt-2">
+                <div class="form-check">
+                    <input type="checkbox" (change)="typeLetter()" name="typevalue" class="form-check-input" id="idLetter">
+                    <label for="idLetter">Letter</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" (change)="typeNumber()" name="typevalue" class="form-check-input"  id="idNumber">
+                    <label for="idNumber">Number</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox"  (change)="typeSymboy()"  name="typevalue"  class="form-check-input" id="idSymbole">
+                    <label for="idSymbole">Symbole</label>
+                </div>
+
+            </div>
+            <div class="mt-2 d-flex justify-content-center" >
+                <button [disabled]="!( FCountPass >0 && (FLetter ||FNumber ||FSymboy) )" type="button" (click)="GenratePass()"  class="btn btn-success w-100 " >Genrate CountPass</button>
+
+            </div>
+            <div class="my-5">
+                <label for="idgeneratepass">Genrate Pass</label>
+                <input type="text"  [value]="FGenratePass" name="GenratePass"  class="form-control" id="idgeneratepass">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

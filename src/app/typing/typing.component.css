@@ -1,0 +1,12 @@
+.row{
+    height: 200px;
+}
+.pending{
+    color: black;
+}
+.correct{
+    color: green;
+}
+.incorrect{
+    color: red;
+}

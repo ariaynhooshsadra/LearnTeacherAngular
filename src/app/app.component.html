@@ -1,0 +1,60 @@
+<app-header></app-header>
+<app-generate-pass></app-generate-pass>
+
+
+<div class="container-fluid">
+    <div class="row bg-success d-flex justify-content-center ">
+        <div class="col-12 col-sm-12 col-md-4 form-check">
+            <input type="checkbox" (change)="typeshowcard()" class="form-check-input" name="" id="idcheckShow">
+            <label for="idcheckShow">Hidden card</label>
+        </div>
+</div>
+</div>
+
+<div class="container-fluid">
+    <div class="row bg-success d-flex justify-content-center ">
+        <div class="col-12 col-sm-12 col-md-4 form-check">
+            <input type="checkbox" (change)="typeshowfaker()" class="form-check-input" name="" id="idcheckShow">
+            <label for="idcheckShow">Hidden faker</label>
+        </div>
+</div>
+</div>
+<div class="container-fluid">
+    <div class="row bg-success d-flex justify-content-center ">
+        <div class="col-12 col-sm-12 col-md-4 form-check">
+            <input type="checkbox" (change)="typeshowpip()" class="form-check-input" name="" id="idcheckShow">
+            <label for="idcheckShow">Hidden pip</label>
+        </div>
+</div>
+</div>
+
+<div *ngIf="Ftypeshowcard">
+
+
+<app-card-dc [class]="check(Ftypeshowcard)" ></app-card-dc>
+</div>
+<div *ngIf="Ftypeshowcard" [class]="check(Ftypeshowcard)">
+
+<div class="container-fluid">
+    <div class="row">
+        <h1>Data to parent to childern</h1>
+        <div class="col-12 col-sm-12 col-md-3" *ngFor="let item of cardlist">
+            <app-card-dpc [images]="item.images" [title]="item.title" [descript]="item.descript"></app-card-dpc>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+
+<div *ngIf="Ftypeshowfaker" [class]="check(Ftypeshowfaker)">
+
+<app-typing></app-typing>
+</div>
+
+<div *ngIf="Ftypeshowpip" [class]="check(Ftypeshowpip)">
+
+    <app-pip></app-pip>
+</div>
